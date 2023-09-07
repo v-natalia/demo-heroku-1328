@@ -1,0 +1,8 @@
+<div class="card text-dark bg-light">
+  <div class="card-header"><small>Posted by: <%= review.user.email %></small></div>
+  <div class="card-body">
+    <span class="badge bg-info text-dark mb-2"><%= review.grade %></span>
+    <p class="card-text"><%= review.content %></p>
+    <%= link_to "Edit", edit_restaurant_review_path(review.restaurant, review), class: "link-secondary" %>
+  </div>
+</div>

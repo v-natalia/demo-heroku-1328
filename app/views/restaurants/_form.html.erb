@@ -1,0 +1,60 @@
+<%= simple_form_for restaurant do |f| %>
+  <%= f.input :name,
+              wrapper_html: { class: "mb-4" },
+              label_html: { class: "form-label text-secondary fw-bold" } %>
+  <div data-controller="character-counter">
+    <%= f.input :description,
+              wrapper_html: { class: "mb-4" },
+              input_html: { data: { character_counter_target: "input" } },
+              label_html: { class: "form-label text-secondary fw-bold" } %>
+      <p>Description is currently <strong data-character-counter-target="counter"></strong> characters long.</p>
+  </div>
+  <%= f.input :photo,
+              as: :file,
+              wrapper_html: { class: "mb-4" },
+              label_html: { class: "form-label text-secondary fw-bold" } %>
+  <div class="row">
+    <div class="col">
+      <%= f.input :phone_number,
+                  wrapper_html: { class: "mb-4" },
+                  label_html: { class: "form-label text-secondary fw-bold" } %>
+    </div>
+    <div class="col">
+      <%= f.input :category,
+                  as: :select,
+                  collection: Restaurant::CATEGORIES,
+                  wrapper_html: { class: "mb-4" },
+                  label_html: { class: "form-label text-secondary fw-bold" } %>
+    </div>
+  </div>
+  <%= f.input :address,
+              wrapper_html: { class: "mb-4" },
+              label_html: { class: "form-label text-secondary fw-bold" } %>
+  <div class="row">
+    <div class="col">
+      <%= f.input :zipcode,
+                  wrapper_html: { class: "mb-4" },
+                  label_html: { class: "form-label text-secondary fw-bold" } %>
+    </div>
+    <div class="col">
+      <%= f.input :city,
+                  wrapper_html: { class: "mb-4" },
+                  label_html: { class: "form-label text-secondary fw-bold" } %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= f.input :opens_at, as: :string,
+                  wrapper_html: { class: "mb-4" },
+                  label_html: { class: "form-label text-secondary fw-bold" },
+                  input_html: { data: { controller: "flatpickr" } } %>
+    </div>
+    <div class="col">
+      <%= f.input :closes_at, as: :string,
+                  wrapper_html: { class: "mb-4" },
+                  label_html: { class: "form-label text-secondary fw-bold" },
+                  input_html: { data: { controller: "flatpickr" } } %>
+    </div>
+  </div>
+  <%= f.submit restaurant.new_record? ? "Create restaurant" : "Update restaurant", class:"btn btn-primary" %>
+<% end %>

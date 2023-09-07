@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="pt-5 col-md-8 offset-md-2">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to "Back to restaurant", restaurant_path(@restaurant) %></li>
+          <li class="breadcrumb-item active" aria-current="page">Edit review</li>
+        </ol>
+      </nav>
+      <h1 class="pb-3">Edit your review of <%= @restaurant.name %></h1>
+      <%= render "form", restaurant: @restaurant, review: @review %>
+    </div>
+  </div>
+</div>

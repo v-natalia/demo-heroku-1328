@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="pt-5 col-md-8 offset-md-2">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to "Back to list", restaurants_path %></li>
+          <li class="breadcrumb-item active" aria-current="page">Edit restaurant</li>
+        </ol>
+      </nav>
+      <h1 class="pb-3">Edit restaurant</h1>
+      <%= render "form", restaurant: @restaurant %>
+    </div>
+  </div>
+</div>
